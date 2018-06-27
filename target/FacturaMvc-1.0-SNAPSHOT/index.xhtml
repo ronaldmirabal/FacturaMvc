@@ -132,11 +132,46 @@
             
              <ui:include src="include/header.xhtml"/>
         <div id="page-wrapper">
-            <form method="post" action="Cliente">   
-                <p><input type="text" name="nombre" id="nombre"/></p>
-                <p><input type="password" name="ape1lido" id="ape1lido"/></p>
-                <p><input type="submit" name="Guardar" value="Guardar" id="Guardar"/></p>
-            </form>
+            
+            <h:form id="formDonadorRegistro" class="form form-personalizado form-horizontal">
+                <fieldset>
+                <legend class="col-md-12">Registrar / Editar Cliente</legend>
+                <div class="col-sm-8 divider-vertical">
+                    
+                    
+                    <div class="form-group">
+                        <h:outputLabel for="nombre" value="NOMBRE:" class="col-sm-3 control-label" />
+                        <div class="col-sm-4">
+                            <p:inputText id="nombre" required="false" 
+                                         class="form-control input-sm"
+                                         value="#{clienteBean.cliente.nombre}">                            
+                            </p:inputText>    
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="form-group">
+                        <h:outputLabel for="apellido" value="APELLIDOS:" class="col-sm-3 control-label" />
+                        <div class="col-sm-4">
+                            <p:inputText id="nombre" required="false" 
+                                         class="form-control input-sm"
+                                         value="#{clienteBean.cliente.apellido}">                            
+                            </p:inputText>    
+                        </div>
+                    </div>
+                    
+      
+
+                            </div> 
+                
+                <h:commandButton id="button" value="POST button" action="#{clienteBean.guardar}" />
+                
+                
+                
+</fieldset>
+            </h:form>
+            
+               
        </div>
         
         
